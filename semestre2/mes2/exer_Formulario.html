@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        * {  margin: 0; padding: 0; border: 0; font-family: Montserrat;  }
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #a9a9a9;
+        }
+        nav {
+            height: 15%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav h1 {
+            font-size: 3rem;
+        }
+
+        main {
+            height: 85%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        main form {
+            height: 85%;
+            width: 75%;
+            background-color: #f2f2f2;
+            border-radius: 0px;
+            border: 7.5px solid #6f6f6f ;
+            box-shadow: #2c2c2c 12.5px 12.5px;
+            padding: 5px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+
+        .Campos {
+            height: 25%;
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        .Campos_Campo {
+            width: 100%;
+            height: 33%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .Campos_Campo__Info {
+            font-size: 1rem;
+        }
+        .Campos_Campo__Input {
+            border: 3px solid #6f6f6f ;
+            box-shadow: #2c2c2c 3px 3px;
+            width: 75%;
+            height: 60%;
+            padding: 0px 7.5px ;
+        }
+
+
+        #Checkboxes {
+            display: flex;
+            height: 25%;
+            width: 80%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .Selects {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        .Selects_Options {}
+
+
+        #Texto {
+            height: 30%;
+            width: 80%;
+            border: 7.5px solid #6f6f6f ;
+            box-shadow: #2c2c2c 7.5px 7.5px;
+            resize: none;
+        }
+
+
+        #botao {
+            height: 10%;
+            padding: 5px 0;
+            width: 20%;
+            background-color: #6f6f6f ;
+            transition: 200ms all; 
+        }
+        #botao:hover {
+            transform: scale(1.025);
+            box-shadow: #2c2c2c 7.5px 7.5px;
+            background-color: transparent;
+            border: 7.5px solid #6f6f6f ;
+            
+            cursor: pointer
+        }
+    </style>
+</head>
+<body>
+    <!--  
+        A tag nav geralmente é usada como tag para 
+        Navegação (POR ISSO NAV), Mas aqui ela represem-
+        ta a tag do titulo da pagina...
+    -->
+    <nav>
+        <h1>Formulario</h1>
+    </nav>
+
+    <!--  
+        A tag main geralmente indica e engloba todo o 
+        conteudo main (principal) do website 
+        (QUE NESSE CASO É O FORM)
+    -->
+    <main>
+        <form>
+            <!-- 
+                Aqui vão estar separados todos os 
+                Campos de Digitação do exercicio,
+                o atributo "class" é um indentificador dessa tag...
+                indentificadores do tipo class atribuem a todos as  
+                tags que possuem esse indentificador as mesmas coisas
+                (estilos, ações em javascript e etc...)
+                -->
+            <section class="Campos">
+                <!-- 
+                    Cada Campo e texto estão dentro de uma div...
+                    Isso é uma boa pratica com programação, pois deixa o codigo mais entendivel do
+                    que só um monte de tags e inputs jogados... Por exemplo,
+                    aqui cada div representa o campo do texto e o label, separando as 3 areas do que um monte de
+
+                    <label></label>
+                    <input/>
+                    <label></label>
+                    <input/>
+                    <label></label>
+                    <input/>
+
+                    x 
+
+                    <div>
+                        <label></label>
+                        <input/>
+                    </div>
+                    <div>
+                        <label></label>
+                        <input/>
+                    </div>
+                    <div>
+                        <label></label>
+                        <input/>
+                    </div>
+
+                    Fica visivelmente mais separado e entendivel...
+                -->
+                <!--  Campo Nome  -->
+                <div class="Campos_Campo">
+                    <label class="Campos_Campo__Info">
+                        Digite seu nome:
+                    </label>
+                    
+                    <input 
+                        placeholder="Nome"
+                        class="Campos_Campo__Input"
+                        type="tex"
+                    />
+                </div>
+
+                <!--  Campo Email  -->
+                <div class="Campos_Campo">
+                    <label class="Campos_Campo__Info">
+                        Digite seu email:
+                    </label>
+                    <input 
+                        class="Campos_Campo__Input"
+                        type="email"
+                        required
+                    />
+                </div>
+
+                <!--  Campo Senha  -->
+                <div class="Campos_Campo">
+                    <label class="Campos_Campo__Info">
+                        Digite sua Senha:
+                    </label>
+
+
+                    <input 
+                        class="Campos_Campo__Input"
+                        type="password"
+                        required
+                    />
+                </div>
+            </section>
+
+
+            <!--
+                Aqui vão estar separados as 2 opções em circulo
+                (radio) do formulario... O Id, assim como o atributo
+                class, ele é um identificador. Porém, ele é um identificador
+                unico, ou seja, somente uma tag html pode ter um id de certo tipo
+                (Ex: n pode haver 2 tags com o id="produtos", tenderam?)
+            
+            -->
+            <section id="Checkboxes">
+                <section class="Selects">
+                    <h3 class="Selects_Tittle">Escolha seu genero:</h3>
+
+                    <section class="Selects_Options">
+                        <div class="Selects_Options_Opt">
+                            <input 
+                                type="radio"
+                                name="Genero" 
+                                placeholder="Masculino"
+                                class="Selects_Options_Opt__Input"
+                            />
+
+                            
+                            <label class="Selects_Options_Opt__Text">Masculino</label>
+                        </div>
+
+                        <div class="Selects_Options_Opt">
+                            <input 
+                                type="radio"
+                                name="Genero" 
+                                class="Selects_Options_Opt__Input"
+                            />
+
+                            
+                            <lable  class="Selects_Options_Opt__Text">Feminino</lable>
+                        </div>
+                    </section>
+                </section>
+                <section class="Selects">
+                    <h3 class="Selects_Tittle">Escolha seu lazer:</h3>
+
+                    <section class="Selects_Options">
+                        <div class="Selects_Options_Opt">
+                            <input 
+                                type="checkbox" 
+                                class="Selects_Options_Opt__Input"
+                            />
+                            <label class="Selects_Options_Opt__Text">Musica</label>
+                        </div>
+                        
+                        
+                        <div class="Selects_Options_Opt">
+                            <input 
+                                type="checkbox" 
+                                class="Selects_Options_Opt__Input"
+                            />
+                            <label class="Selects_Options_Opt__Text">Ciclismo</label>
+                        </div>
+                        
+                        
+                        <div class="Selects_Options_Opt">
+                            <input 
+                                type="checkbox" 
+                                class="Selects_Options_Opt__Input"
+                            />
+                            <label class="Selects_Options_Opt__Text">Programation</label>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+
+            <!--
+                sinceramente, eu gosto de usar o class mesmo n usando para
+                outros eleementos, mas gosto por causa da dinamica que traz 
+                com frameworks (tipo react) e por gosto pessoal...
+ 
+                A parte com o campo de texto 
+            -->
+            <textarea id="Texto">
+                Nos diga sua opiniao!
+            </textarea>
+            <!-- 
+                Aqui está a area do botão do formulario...
+            -->
+            <button id="botao">Enviar</button>
+        </form>
+    </main>
+</body>
+</html>
